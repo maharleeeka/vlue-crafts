@@ -1,4 +1,5 @@
 import js from '@eslint/js'
+import eslintConfigPrettier from 'eslint-config-prettier/flat'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
@@ -9,6 +10,7 @@ export default defineConfig([
   globalIgnores(['dist']),
   {
     files: ['**/*.{ts,tsx}'],
+    ignores: ['vite.config.ts'],
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
@@ -19,4 +21,19 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  {
+    files: ['vite.config.ts'],
+    extends: [js.configs.recommended, tseslint.configs.recommended],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
+  {
+    files: ['eslint.config.js'],
+    extends: [js.configs.recommended],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
+  eslintConfigPrettier,
 ])
