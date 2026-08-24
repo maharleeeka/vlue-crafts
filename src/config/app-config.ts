@@ -35,8 +35,8 @@ if (warningDiagnostics.length > 0 && env.enableDebugLogs) {
 
 export const appConfig = {
   api: {
-    craftsUrl: resolveUrl(env.apiBaseUrl, env.craftsApiPath),
-    authLoginUrl: resolveUrl(env.apiBaseUrl, env.authLoginPath),
+    craftsUrl: resolveUrl(env.baseUrl, env.craftsApiPath),
+    authLoginUrl: resolveUrl(env.baseUrl, env.authLoginPath),
   },
   features: {
     enableDebugLogs: env.enableDebugLogs,

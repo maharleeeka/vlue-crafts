@@ -7,7 +7,7 @@ export type EnvDiagnostic = {
 }
 
 type ParsedEnv = {
-  apiBaseUrl: string
+  baseUrl: string
   craftsApiPath: string
   authLoginPath: string
   enableDebugLogs: boolean
@@ -61,7 +61,7 @@ const parsePath = (
 const readEnv = (): ParsedEnv => {
   const diagnostics: EnvDiagnostic[] = []
 
-  const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL ?? '').trim()
+  const baseUrl = (import.meta.env.VITE_BASE_URL ?? '').trim().replace(/\/+$/, '')
   const craftsApiPath = parsePath(
     'VITE_CRAFTS_API_PATH',
     import.meta.env.VITE_CRAFTS_API_PATH,
@@ -81,7 +81,7 @@ const readEnv = (): ParsedEnv => {
   )
 
   return {
-    apiBaseUrl,
+    baseUrl,
     craftsApiPath,
     authLoginPath,
     enableDebugLogs,
