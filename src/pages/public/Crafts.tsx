@@ -1,23 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { useSearchParams } from 'react-router-dom'
-import { appConfig } from '@/config/app-config'
 import { craftCategories } from '@/data/craft-categories'
-
-type Craft = {
-  id: string
-  name: string
-  price: number
-}
-
-const fetchCrafts = async (): Promise<Craft[]> => {
-  const response = await fetch(appConfig.api.craftsUrl)
-
-  if (!response.ok) {
-    throw new Error(`Failed to load crafts (${response.status})`)
-  }
-
-  return response.json()
-}
+import { fetchCrafts } from '@/lib/crafts'
 
 export default function Crafts() {
   const [searchParams] = useSearchParams()

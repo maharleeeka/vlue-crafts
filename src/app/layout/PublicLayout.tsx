@@ -3,7 +3,7 @@ import PublicHeader from '@/components/navigation/PublicHeader'
 
 export default function PublicLayout() {
   return (
-    <div className="min-h-dvh bg-white text-gray-900">
+    <div className="min-h-dvh bg-neutral-50 text-neutral-900">
       <PublicHeader />
       <main>
         <Outlet />

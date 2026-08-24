@@ -9,8 +9,8 @@ const navItemClassName = (isActive: boolean) =>
   [
     'block rounded-md px-3 py-2 text-sm font-medium transition-colors',
     isActive
-      ? 'bg-gray-100 text-gray-900'
-      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
+      ? 'bg-primary-100 text-primary-800'
+      : 'text-neutral-600 hover:bg-primary-50 hover:text-primary-900',
   ].join(' ')
 
 type NavItemLinkProps = {
@@ -42,9 +42,7 @@ export default function NavItemLink({ item, onNavigate }: NavItemLinkProps) {
   }
 
   const to =
-    item.kind === 'section'
-      ? { hash: item.hash, pathname: '/' }
-      : item.to
+    item.kind === 'section' ? { hash: item.hash, pathname: '/' } : item.to
 
   return (
     <Link

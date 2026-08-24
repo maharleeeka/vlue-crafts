@@ -1,0 +1,156 @@
+/*
+ * Color tokens for vlue-crafts
+ *
+ * Brand seeds
+ *   Primary   #9E9BE0  periwinkle  hsl(243 53% 74%)
+ *   Secondary #DDE09B  chartreuse  hsl(63 53% 74%)
+ *
+ * Both seeds share the same saturation and lightness (~53% / ~74%),
+ * sitting ~180° apart on the hue wheel. They are used as the 400 step.
+ * Darker 500–950 steps are for text, fills, and contrast; lighter
+ * 50–300 steps are for washes, surfaces, and borders.
+ *
+ * Tailwind v4: --color-* tokens become utilities
+ *   bg-primary-400, text-secondary, border-neutral-200, etc.
+ */
+
+@theme {
+  /* ------------------------------------------------------------------ */
+  /* Primary — periwinkle                                               */
+  /* ------------------------------------------------------------------ */
+  --color-primary-50: #f3f3fc;
+  --color-primary-100: #e6e5f8;
+  --color-primary-200: #cecdef;
+  --color-primary-300: #bbb9e4;
+  --color-primary-400: #9e9be0;
+  --color-primary-500: #726ecf;
+  --color-primary-600: #4540b5;
+  --color-primary-700: #373384;
+  --color-primary-800: #2a285d;
+  --color-primary-900: #1f1d3e;
+  --color-primary-950: #141325;
+  --color-primary: var(--color-primary-400);
+  --color-primary-foreground: var(--color-primary-950);
+
+  /* ------------------------------------------------------------------ */
+  /* Secondary — chartreuse                                             */
+  /* ------------------------------------------------------------------ */
+  --color-secondary-50: #fcfcf3;
+  --color-secondary-100: #f7f8e5;
+  --color-secondary-200: #eeefcd;
+  --color-secondary-300: #e2e4b9;
+  --color-secondary-400: #dde09b;
+  --color-secondary-500: #c7cb72;
+  --color-secondary-600: #b3b847;
+  --color-secondary-700: #8d913b;
+  --color-secondary-800: #64662e;
+  --color-secondary-900: #434422;
+  --color-secondary-950: #272815;
+  --color-secondary: var(--color-secondary-400);
+  --color-secondary-foreground: var(--color-secondary-950);
+
+  /* ------------------------------------------------------------------ */
+  /* Neutral — cool gray, tinted toward primary                         */
+  /* ------------------------------------------------------------------ */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f9f9fb;
+  --color-neutral-100: #f3f3f6;
+  --color-neutral-200: #e5e5eb;
+  --color-neutral-300: #d2d1db;
+  --color-neutral-400: #acabba;
+  --color-neutral-500: #7b7a90;
+  --color-neutral-600: #5d5c70;
+  --color-neutral-700: #444356;
+  --color-neutral-800: #2c2b3b;
+  --color-neutral-900: #1b1b28;
+  --color-neutral-950: #101019;
+
+  /* ------------------------------------------------------------------ */
+  /* Success — green pulled from the chartreuse family                  */
+  /* ------------------------------------------------------------------ */
+  --color-success-50: #f1f9f2;
+  --color-success-100: #e2f3e5;
+  --color-success-200: #c4e8ca;
+  --color-success-300: #97d8a2;
+  --color-success-400: #60c772;
+  --color-success-500: #36a147;
+  --color-success-600: #2a8439;
+  --color-success-700: #216e2e;
+  --color-success-800: #1a4d22;
+  --color-success-900: #143419;
+  --color-success: var(--color-success-500);
+  --color-success-foreground: var(--color-neutral-0);
+
+  /* ------------------------------------------------------------------ */
+  /* Warning — amber                                                    */
+  /* ------------------------------------------------------------------ */
+  --color-warning-50: #fef7ec;
+  --color-warning-100: #fdefd9;
+  --color-warning-200: #f8d8a0;
+  --color-warning-300: #f2c069;
+  --color-warning-400: #eba733;
+  --color-warning-500: #d18e1a;
+  --color-warning-600: #a97419;
+  --color-warning-700: #825b17;
+  --color-warning-800: #5a4116;
+  --color-warning-900: #3d2e14;
+  --color-warning: var(--color-warning-500);
+  --color-warning-foreground: var(--color-neutral-0);
+
+  /* ------------------------------------------------------------------ */
+  /* Danger — rose, complementary to the greens                         */
+  /* ------------------------------------------------------------------ */
+  --color-danger-50: #fdf1f1;
+  --color-danger-100: #fce4e4;
+  --color-danger-200: #f7caca;
+  --color-danger-300: #eea0a0;
+  --color-danger-400: #e36d6d;
+  --color-danger-500: #d33636;
+  --color-danger-600: #ae2929;
+  --color-danger-700: #8b2323;
+  --color-danger-800: #5f1c1c;
+  --color-danger-900: #3d1414;
+  --color-danger: var(--color-danger-500);
+  --color-danger-foreground: var(--color-neutral-0);
+
+  /* ------------------------------------------------------------------ */
+  /* Semantic aliases                                                   */
+  /* 400 seeds are pastels — use 600+ for text and solid fills.         */
+  /* ------------------------------------------------------------------ */
+  --color-background: var(--color-neutral-50);
+  --color-foreground: var(--color-neutral-900);
+  --color-muted: var(--color-neutral-500);
+  --color-muted-foreground: var(--color-neutral-600);
+  --color-surface: var(--color-neutral-0);
+  --color-surface-muted: var(--color-neutral-100);
+  --color-border: var(--color-neutral-200);
+  --color-border-strong: var(--color-neutral-300);
+  --color-ring: var(--color-primary-500);
+  --color-overlay: color-mix(in srgb, var(--color-neutral-950) 50%, transparent);
+
+  /* Interactive fills: darker than the pastel seeds for contrast */
+  --color-brand: var(--color-primary-600);
+  --color-brand-hover: var(--color-primary-700);
+  --color-brand-foreground: var(--color-neutral-0);
+  --color-accent: var(--color-secondary-400);
+  --color-accent-hover: var(--color-secondary-500);
+  --color-accent-foreground: var(--color-secondary-950);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-neutral-950);
+    --color-foreground: var(--color-neutral-50);
+    --color-muted: var(--color-neutral-400);
+    --color-muted-foreground: var(--color-neutral-300);
+    --color-surface: var(--color-neutral-900);
+    --color-surface-muted: var(--color-neutral-800);
+    --color-border: var(--color-neutral-800);
+    --color-border-strong: var(--color-neutral-700);
+    --color-ring: var(--color-primary-400);
+    --color-overlay: color-mix(in srgb, var(--color-neutral-950) 70%, transparent);
+    --color-brand: var(--color-primary-400);
+    --color-brand-hover: var(--color-primary-300);
+    --color-brand-foreground: var(--color-primary-950);
+  }
+}

@@ -61,13 +61,13 @@ export default function PublicHeader() {
   const closeMenu = () => setMenuOpen(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
+    <header className="sticky top-0 z-50 border-b border-primary-100 bg-neutral-0/90 backdrop-blur">
       <nav
         aria-label="Main navigation"
         className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4"
       >
         <Link
-          className="text-lg font-semibold tracking-tight text-gray-900"
+          className="text-lg font-semibold tracking-tight text-primary-800"
           onClick={(event) => {
             event.preventDefault()
             goHome(navigate, location, { onNavigate: closeMenu })
@@ -89,7 +89,7 @@ export default function PublicHeader() {
           aria-controls="mobile-nav"
           aria-expanded={menuOpen}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          className="inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 md:hidden"
+          className="inline-flex items-center justify-center rounded-md p-2 text-primary-700 hover:bg-primary-50 hover:text-primary-900 md:hidden"
           onClick={() => setMenuOpen((open) => !open)}
           type="button"
         >
@@ -99,7 +99,7 @@ export default function PublicHeader() {
 
       <ul
         className={[
-          'border-t border-gray-200 px-4 py-3 md:hidden',
+          'border-t border-primary-100 px-4 py-3 md:hidden',
           menuOpen ? 'block' : 'hidden',
         ].join(' ')}
         id="mobile-nav"
